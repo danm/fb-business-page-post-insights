@@ -1,6 +1,7 @@
 # fb-page-post-insights
 Grab all Facebook pages that belong to a user, process their posts and run insights on them
-*Disclaimer - The function of this code is bespoke to BBC and is meant for transparant engineering or code reviews*
+
+**Disclaimer - The function of this code is bespoke to BBC and is meant for transparant engineering or code reviews**
 
 _Written and Tested with NodeJS v8.4.0 on macOS X 10.12.6_
 
