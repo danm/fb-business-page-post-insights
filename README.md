@@ -26,8 +26,11 @@ I want to show the number of people who became fans of the page from clicking on
 ## How to use
 
 `git clone https://github.com/danm/fb-business-page-post-insights.git`
+
 `cd fb-business-page-post-insights`
+
 `npm i`
+
 `./bin/fbposts <system user token> <app secret>`
 
 Your app must have `Require App Secret` which on in the [advanced settings](https://developers.facebook.com/apps/<appid>/settings/advanced/). This is the same place you grab the app secret from.
