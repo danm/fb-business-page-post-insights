@@ -1,0 +1,33 @@
+{
+  "name": "fb-business-page-post-insights",
+  "version": "1.0.0",
+  "description": "Group together many Facebook page posts",
+  "main": "index.js",
+  "bin": {
+    "fb-business-page-post-insights": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danm/fb-business-page-post-insights.git"
+  },
+  "keywords": [
+    "Facebook",
+    "Analytics",
+    "Posts",
+    "Page",
+    "Insights"
+  ],
+  "author": "Daniel Morrison <daniel.morrison@bbc.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danm/fb-business-page-post-insights/issues"
+  },
+  "homepage": "https://github.com/danm/fb-business-page-post-insights#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "request": "^2.88.0"
+  }
+}

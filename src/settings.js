@@ -4,11 +4,8 @@ const settings = {
 };
 
 module.exports = {
-  set: () => {
-    if (!process.argv[2] || !process.argv[3]) throw new Error('Missing access token or app secret');
-    const accessToken = process.argv[2];
-    const appsecret = process.argv[3];
-    // if you pass an extra argument in, it will assume you want appsecret_proof
+  set: (accessToken, appsecret) => {
+    if (!accessToken || !appsecret) throw new Error('Missing access token or app secret');
 
     settings.access_token = accessToken;
     settings.appsecret = appsecret;

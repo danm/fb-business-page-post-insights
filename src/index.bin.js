@@ -1,13 +1,14 @@
+const fs = require('fs');
 const settings = require('./settings');
 const getSystemAssignedPages = require('./apis/getSystemAssignedPages');
 const getPagePosts = require('./apis/getPagePosts');
 const resolveLinkShares = require('./apis/resolveLinkShares');
 const getAllPostInsights = require('./apis/getAllPostInsights');
 
-module.exports = async (accessToken, appsecret) => {
+const init = async () => {
   try {
     // set cli arguments 
-    settings.set(accessToken, appsecret);
+    settings.set(process.argv[2], process.argv[3]);
 
     // get all pages that belong to system account
     const pages = await getSystemAssignedPages();
@@ -20,7 +21,10 @@ module.exports = async (accessToken, appsecret) => {
     const postsWhichShareBBCNews = await resolveLinkShares(posts);
     
     // return insights of the pages that we care about
-    return await getAllPostInsights(postsWhichShareBBCNews);
+    const data =  await getAllPostInsights(postsWhichShareBBCNews);
+
+    fs.writeFileSync('./output.json.log', JSON.stringify(data));
+    console.log('Finsihed, see ./output.json.log for result and ./errors.log for errors');
     
     // we are done, but getAllPostInsights returns insights for the posts it checked.
   } catch (e) {
@@ -29,4 +33,4 @@ module.exports = async (accessToken, appsecret) => {
   }
 };
 
-
+init();

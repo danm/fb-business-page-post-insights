@@ -1,4 +1,3 @@
-const fs = require('fs');
 const getObjectInsights = require('./getObjectInsights');
 
 module.exports = posts => (
@@ -30,9 +29,7 @@ module.exports = posts => (
         return data;
       });
 
-      fs.writeFileSync('./output.json.log', JSON.stringify(postsWithInsights));
-      console.log('Finsihed, see ./output.json.log for result and ./errors.log for errors');
-      resolve();
+      resolve(JSON.stringify(postsWithInsights));
     } catch (e) {
       reject(e);
     }

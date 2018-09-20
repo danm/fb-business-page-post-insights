@@ -7,7 +7,7 @@ const getPagePosts = (page) => (
         uri: `/${page.id}`,
         qs: {
           limit: 100,
-          fields: 'feed{permalink_url,type,link,message,name,object_id,comments.summary(1).limit(0),shares}',
+          fields: 'feed{created_time,permalink_url,type,link,message,name,object_id,comments.summary(1).limit(0),shares}',
         },
       };
       
